@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <IdeoPresetCategoryDef>
+    <defName>Atheism</defName>
+    <label>atheism</label>
+    <description>Play with the atheist ideology. Similar to Classic RimWorld, but other factions have ideologies as normal. Optionally, you can destroy those ideologies and access a unique win condition.</description>
+    <groupLabel>Atheism</groupLabel>
+  </IdeoPresetCategoryDef>
+  
+  <IdeoPresetDef>
+    <defName>Atheism</defName>
+    <label>atheism</label>
+    <description>Play with the atheist ideology. Similar to Classic RimWorld, but other factions have ideologies as normal. Optionally, you can destroy those ideologies and access a unique win condition.</description>
+    <categoryDef>Atheism</categoryDef>
+  </IdeoPresetDef>
+	
+</Defs>
