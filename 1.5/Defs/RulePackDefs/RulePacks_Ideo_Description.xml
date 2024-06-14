@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <IdeoStoryPatternDef>
+    <defName>AtheistDescription</defName>
+    <segments>
+      <li>description</li>
+    </segments>
+    <rules>
+      <rulesStrings>
+        <li>description->Supernatural beings are meaningless man-made constructs.</li>
+      </rulesStrings>
+    </rules>
+  </IdeoStoryPatternDef>
+	
+</Defs>

@@ -13,6 +13,9 @@
     <label>atheism</label>
     <description>Play with the atheist ideology. Similar to Classic RimWorld, but other factions have ideologies as normal. Optionally, you can destroy those ideologies and access a unique win condition.</description>
     <categoryDef>Atheism</categoryDef>
+	<memes>
+      <li>Structure_Atheist</li>
+    </memes>
   </IdeoPresetDef>
 	
 </Defs>

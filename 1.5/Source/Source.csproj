@@ -59,6 +59,12 @@
   <ItemGroup>
     <Compile Include="AtheismRefs.cs" />
     <Compile Include="Debug.cs" />
+    <Compile Include="Ideo\IdeoFoundation_Atheism.cs" />
+    <Compile Include="Ideo\IdeoUtility.cs" />
+    <Compile Include="Ideo\Patch_Ideo.cs" />
+    <Compile Include="Ideo\Patch_IdeoGenerator.cs" />
+    <Compile Include="Ideo\Patch_MemeDef.cs" />
+    <Compile Include="UI\Patch_IdeoUIUtility.cs" />
     <Compile Include="UI\Patch_Page_ChooseIdeoPreset.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="AtheismMod.cs" />

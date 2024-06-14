@@ -37,5 +37,25 @@ namespace Atheism.UI
             });
             num = rect.yMax + 10f;
         }
+
+        public static TipSignal GetNameAndSymbolTooltip(RimWorld.Ideo ideo, IdeoEditMode editMode)
+        {
+            return string.Concat(new string[]
+            {
+                ("Name".Translate() + ": ").Colorize(ColoredText.TipSectionTitleColor),
+                ideo.name,
+                "\n",
+                ("Adjective".Translate() + ": ").Colorize(ColoredText.TipSectionTitleColor),
+                ideo.adjective.CapitalizeFirst(),
+                "\n",
+                ("IdeoMembers".Translate() + ": ").Colorize(ColoredText.TipSectionTitleColor),
+                ideo.memberName.CapitalizeFirst(),
+                "\n",
+                ideo.leaderTitleMale != null ? ("LeaderTitle".Translate() + ": ").Colorize(ColoredText.TipSectionTitleColor) + ideo.leaderTitleMale.CapitalizeFirst() + "\n" : "",
+                ideo.WorshipRoomLabel != null ? ("WorshipRoom".Translate() + ": ").Colorize(ColoredText.TipSectionTitleColor) + ideo.WorshipRoomLabel.CapitalizeFirst() + "\n" : "",
+                (ideo.leaderTitleFemale != ideo.leaderTitleMale) ? (" (" + ideo.leaderTitleFemale.CapitalizeFirst() + ")") : "",
+                (editMode != IdeoEditMode.None) ? ("\n" + IdeoUIUtility.ClickToEdit) : string.Empty
+            });
+        }
     }
 }

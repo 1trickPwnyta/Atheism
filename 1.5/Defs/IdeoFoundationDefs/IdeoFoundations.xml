@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <IdeoFoundationDef>
+    <defName>Atheism</defName>
+    <foundationClass>Atheism.Ideo.IdeoFoundation_Atheism</foundationClass>
+  </IdeoFoundationDef>
+	
+</Defs>

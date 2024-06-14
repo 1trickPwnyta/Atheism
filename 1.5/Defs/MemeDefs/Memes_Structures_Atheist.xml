@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <MemeDef>
+    <defName>Structure_Atheist</defName>
+    <label>atheist</label>
+    <description>Supernatural beings are meaningless man-made constructs.</description>
+    <category>Structure</category>
+    <iconPath>UI/Structures/Structure_Atheist</iconPath>
+    <impact>0</impact>
+    <randomizationSelectionWeightFactor>0</randomizationSelectionWeightFactor>
+    <deityCount>0</deityCount>
+	<descriptionMaker>
+	  <patterns>
+	    <li><def>AtheistDescription</def></li>
+	  </patterns>
+	</descriptionMaker>
+  </MemeDef>
+	
+</Defs>
