@@ -72,7 +72,7 @@ namespace Atheism.UI
                     CodeInstruction loadIdeoInstruction = new CodeInstruction(OpCodes.Ldarg_1);
                     loadIdeoInstruction.labels.AddRange(instruction.labels);
                     yield return loadIdeoInstruction;
-                    yield return new CodeInstruction(OpCodes.Call, AtheismRefs.m_IdeoUtility_IsAtheism);
+                    yield return new CodeInstruction(OpCodes.Call, AtheismRefs.m_IdeoUtility_IsAtheism_Ideo);
                     yield return new CodeInstruction(OpCodes.Brfalse_S, notAtheismLabel);
                     yield return new CodeInstruction(OpCodes.Ldc_I4_0);
                     yield return new CodeInstruction(OpCodes.Stloc_1);
@@ -83,6 +83,39 @@ namespace Atheism.UI
 
                 yield return instruction;
             }
+        }
+    }
+
+    // Don't show the debug buttons for atheism ideo
+    [HarmonyPatch(typeof(IdeoUIUtility))]
+    [HarmonyPatch("DoDebugButtons")]
+    public static class Patch_IdeoUIUtility_DoDebugButtons
+    {
+        public static bool Prefix(RimWorld.Ideo ideo)
+        {
+            return !ideo.IsAtheism();
+        }
+    }
+
+    // Don't show any precepts for atheism
+    [HarmonyPatch(typeof(IdeoUIUtility))]
+    [HarmonyPatch(nameof(IdeoUIUtility.DoPrecepts))]
+    public static class Patch_IdeoUIUtility_DoPrecepts
+    {
+        public static bool Prefix(RimWorld.Ideo ideo)
+        {
+            return !ideo.IsAtheism();
+        }
+    }
+
+    // Don't show any appearance options for atheism
+    [HarmonyPatch(typeof(IdeoUIUtility))]
+    [HarmonyPatch(nameof(IdeoUIUtility.DoAppearanceItems))]
+    public static class Patch_IdeoUIUtility_DoAppearanceItems
+    {
+        public static bool Prefix(RimWorld.Ideo ideo)
+        {
+            return !ideo.IsAtheism();
         }
     }
 }

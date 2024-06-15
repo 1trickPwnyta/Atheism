@@ -41,4 +41,22 @@ namespace Atheism.UI
             }
         }
     }
+
+    // Fix vanilla bug where selecting a preset ideo doesn't fix the page order
+    /*
+     * More info: If you select a custom ideo option first, it sets the character screen's prev page to the custom ideo page.
+     * If you back out of the custom ideo page and select a different ideo preset, there could be a problem.
+     * Classic mode has a line that sets the character screen's prev page back to the ideo preset page.
+     * The preset ideo option does not do this, so if custom had been selected first, selecting a preset ideo after ward 
+     * and then backing out of the character page will show you the custom ideo page, allowing you to customize the preset ideo.
+     */
+    [HarmonyPatch(typeof(Page_ChooseIdeoPreset))]
+    [HarmonyPatch("DoPreset")]
+    public static class Patch_Page_ChooseIdeoPreset_DoPreset
+    {
+        public static void Prefix(Page_ChooseIdeoPreset __instance)
+        {
+            __instance.next.prev = __instance;
+        }
+    }
 }

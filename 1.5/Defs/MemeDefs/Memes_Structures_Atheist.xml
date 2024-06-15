@@ -10,11 +10,7 @@
     <impact>0</impact>
     <randomizationSelectionWeightFactor>0</randomizationSelectionWeightFactor>
     <deityCount>0</deityCount>
-	<descriptionMaker>
-	  <patterns>
-	    <li><def>AtheistDescription</def></li>
-	  </patterns>
-	</descriptionMaker>
+	<hiddenInChooseMemes>true</hiddenInChooseMemes>
   </MemeDef>
 	
 </Defs>
