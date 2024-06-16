@@ -13,7 +13,7 @@ namespace Atheism.Thoughts
     {
         public static void Prefix(MemoryThoughtHandler __instance, Thought_Memory newThought)
         {
-            if (newThought.sourcePrecept != null && __instance.pawn.ideo.Ideo.IsAtheism() && __instance.pawn.ideo.Ideo.PreceptsListForReading.Contains(newThought.sourcePrecept))
+            if (newThought.sourcePrecept != null && __instance.pawn.Ideo.IsAtheism() && __instance.pawn.Ideo.PreceptsListForReading.Contains(newThought.sourcePrecept))
             {
                 newThought.sourcePrecept = null;
             }

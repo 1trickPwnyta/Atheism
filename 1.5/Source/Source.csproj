@@ -67,6 +67,7 @@
     <Compile Include="Ideo\Patch_MemeDef.cs" />
     <Compile Include="Thoughts\Patch_MemoryThoughtHandler.cs" />
     <Compile Include="Thoughts\Patch_SituationalThoughtHandler.cs" />
+    <Compile Include="Thoughts\Patch_ThoughtWorker_Precept_Social.cs" />
     <Compile Include="UI\Patch_Dialog_ChooseIdeoSymbols.cs" />
     <Compile Include="UI\Patch_IdeoUIUtility.cs" />
     <Compile Include="UI\Patch_Page_ChooseIdeoPreset.cs" />

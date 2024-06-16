@@ -11,6 +11,7 @@ namespace Atheism
     {
         public static readonly FieldInfo f_MemeDef_worshipRoomLabel = AccessTools.Field(typeof(MemeDef), nameof(MemeDef.worshipRoomLabel));
         public static readonly FieldInfo f_MemeDef_descriptionMaker = AccessTools.Field(typeof(MemeDef), nameof(MemeDef.descriptionMaker));
+        public static readonly FieldInfo f_IdeoManager_classicMode = AccessTools.Field(typeof(IdeoManager), nameof(IdeoManager.classicMode));
 
         public static readonly MethodInfo m_DefDatabase_IdeoPresetCategoryDef_get_AllDefsListForReading = AccessTools.Method(typeof(DefDatabase<IdeoPresetCategoryDef>), "get_AllDefsListForReading");
         public static readonly MethodInfo m_UIUtility_DoAtheismIdeoPresetSection = AccessTools.Method(typeof(UIUtility), nameof(UIUtility.DoAtheismIdeoPresetSection));
@@ -25,5 +26,6 @@ namespace Atheism
         public static readonly MethodInfo m_ModsConfig_get_IdeologyActive = AccessTools.Method(typeof(ModsConfig), "get_IdeologyActive");
         public static readonly MethodInfo m_IdeoUtility_GetAllNonAtheismIdeoIconDefs = AccessTools.Method(typeof(Ideo.IdeoUtility), nameof(Ideo.IdeoUtility.GetAllNonAtheismIdeoIconDefs));
         public static readonly MethodInfo m_DefDatabase_IdeoIconDef_get_AllDefs = AccessTools.Method(typeof(DefDatabase<IdeoIconDef>), "get_AllDefs");
+        public static readonly MethodInfo m_Find_get_IdeoManager = AccessTools.Method(typeof(Find), "get_IdeoManager");
     }
 }

@@ -12,7 +12,7 @@ namespace Atheism.Thoughts
     {
         public static void Postfix(SituationalThoughtHandler __instance, Thought_Situational __result)
         {
-            if (__result != null && __result.sourcePrecept != null && __instance.pawn.ideo.Ideo.IsAtheism() && __instance.pawn.ideo.Ideo.PreceptsListForReading.Contains(__result.sourcePrecept))
+            if (__result != null && __result.sourcePrecept != null && __instance.pawn.Ideo.IsAtheism() && __instance.pawn.Ideo.PreceptsListForReading.Contains(__result.sourcePrecept))
             {
                 __result.sourcePrecept = null;
             }
@@ -26,7 +26,7 @@ namespace Atheism.Thoughts
     {
         public static void Postfix(SituationalThoughtHandler __instance, Thought_SituationalSocial __result)
         {
-            if (__result != null && __result.sourcePrecept != null && __instance.pawn.ideo.Ideo.IsAtheism() && __instance.pawn.ideo.Ideo.PreceptsListForReading.Contains(__result.sourcePrecept))
+            if (__result != null && __result.sourcePrecept != null && __instance.pawn.Ideo.IsAtheism() && __instance.pawn.Ideo.PreceptsListForReading.Contains(__result.sourcePrecept))
             {
                 __result.sourcePrecept = null;
             }
