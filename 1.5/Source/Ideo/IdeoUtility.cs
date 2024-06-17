@@ -43,5 +43,10 @@ namespace Atheism.Ideo
         {
             return def == DefDatabase<IdeoIconDef>.GetNamed("Atheism");
         }
+
+        public static bool IsAtheism(this IdeoGenerationParms parms)
+        {
+            return parms.forcedMemes != null && parms.forcedMemes.Any(m => m.IsAtheism());
+        }
     }
 }

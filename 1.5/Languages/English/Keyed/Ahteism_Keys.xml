@@ -3,8 +3,11 @@
 	<Atheism_Atheism>Atheism</Atheism_Atheism>
 	<Atheism_AtheistAdjective>Atheist</Atheism_AtheistAdjective>
 	<Atheism_AtheistMemberName>Atheist</Atheism_AtheistMemberName>
-	<Atheism_AtheismConversionPower>Atheism conversion boost: {0_percentage}</Atheism_AtheismConversionPower>
+	<Atheism_AtheismConversionPower>Atheism conversion factor: {0_percentage}</Atheism_AtheismConversionPower>
 	<Atheism_AtheismConversionPowerDesc>Since atheists have no moral guide, their conversion power is multiplied by this amount to compensate.</Atheism_AtheismConversionPowerDesc>
 	<Atheism_AtheismQuickTest>DEV: Quicktest option uses atheism</Atheism_AtheismQuickTest>
 	<Atheism_AtheismQuickTestDesc>Whether to use atheism as the starting ideo when selecting the Dev quicktest option in the main menu.</Atheism_AtheismQuickTestDesc>
+	<Atheism_IdeologicalVariationChance>Ideological variation chance in non-player factions: {0_percentage}</Atheism_IdeologicalVariationChance>
+	<Atheism_DeityCountRange>Non-atheist ideology deity count</Atheism_DeityCountRange>
+	<Atheism_DeityCountRangeDesc>The minimum and maximum number of deities non-atheist ideologies can have.</Atheism_DeityCountRangeDesc>
 </LanguageData>

@@ -5,6 +5,7 @@ using Verse;
 
 namespace Atheism.Dev
 {
+    // Use atheism ideology for dev quicktest
     [HarmonyPatch(typeof(ScenPart_PlayerFaction))]
     [HarmonyPatch(nameof(ScenPart_PlayerFaction.PostWorldGenerate))]
     public static class Patch_ScenPart_PlayerFaction

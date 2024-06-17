@@ -61,7 +61,11 @@
     <Compile Include="AtheismSettings.cs" />
     <Compile Include="Conversion\Patch_InteractionWorker_ConvertIdeoAttempt.cs" />
     <Compile Include="Debug.cs" />
+    <Compile Include="Deity\Patch_Ideo.cs" />
+    <Compile Include="Deity\Patch_IdeoFoundation_Deity.cs" />
+    <Compile Include="Deity\Patch_IdeoUtility.cs" />
     <Compile Include="Dev\Patch_ScenPart_PlayerFaction.cs" />
+    <Compile Include="IdeologicalVariation\Patch_FactionIdeosTracker.cs" />
     <Compile Include="Ideo\IdeoFoundation_Atheism.cs" />
     <Compile Include="Ideo\IdeoUtility.cs" />
     <Compile Include="Ideo\Patch_Ideo.cs" />
