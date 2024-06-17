@@ -58,6 +58,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AtheismRefs.cs" />
+    <Compile Include="AtheismSettings.cs" />
+    <Compile Include="Conversion\Patch_InteractionWorker_ConvertIdeoAttempt.cs" />
     <Compile Include="Debug.cs" />
     <Compile Include="Dev\Patch_ScenPart_PlayerFaction.cs" />
     <Compile Include="Ideo\IdeoFoundation_Atheism.cs" />

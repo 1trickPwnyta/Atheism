@@ -1,5 +1,4 @@
-﻿#if DEBUG
-using HarmonyLib;
+﻿using HarmonyLib;
 using RimWorld;
 using System.Collections.Generic;
 using Verse;
@@ -12,12 +11,15 @@ namespace Atheism.Dev
     {
         public static bool Prefix(FactionDef ___factionDef)
         {
-            IdeoGenerationParms parms = default(IdeoGenerationParms);
-            parms.forcedMemes = new List<MemeDef>() { DefDatabase<MemeDef>.GetNamed("Structure_Atheist") };
-            Find.GameInitData.playerFaction = FactionGenerator.NewGeneratedFaction(new FactionGeneratorParms(___factionDef, parms, null));
-            Find.FactionManager.Add(Find.GameInitData.playerFaction);
-            return false;
+            if (Prefs.DevMode && AtheismSettings.AtheismQuickTest)
+            {
+                IdeoGenerationParms parms = default(IdeoGenerationParms);
+                parms.forcedMemes = new List<MemeDef>() { DefDatabase<MemeDef>.GetNamed("Structure_Atheist") };
+                Find.GameInitData.playerFaction = FactionGenerator.NewGeneratedFaction(new FactionGeneratorParms(___factionDef, parms, null));
+                Find.FactionManager.Add(Find.GameInitData.playerFaction);
+                return false;
+            }
+            return true;
         }
     }
 }
-#endif
