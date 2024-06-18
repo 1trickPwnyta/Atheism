@@ -55,21 +55,31 @@
       <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.TextRenderingModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Atheism.cs" />
     <Compile Include="AtheismRefs.cs" />
     <Compile Include="AtheismSettings.cs" />
+    <Compile Include="Conversion\ConversionUtility.cs" />
+    <Compile Include="Conversion\DiscoveryProgress.cs" />
     <Compile Include="Conversion\Patch_InteractionWorker_ConvertIdeoAttempt.cs" />
     <Compile Include="Debug.cs" />
     <Compile Include="Deity\Patch_Ideo.cs" />
     <Compile Include="Deity\Patch_IdeoFoundation_Deity.cs" />
     <Compile Include="Deity\Patch_IdeoUtility.cs" />
+    <Compile Include="Dev\DevUtility.cs" />
     <Compile Include="Dev\Patch_ScenPart_PlayerFaction.cs" />
     <Compile Include="IdeologicalVariation\Patch_FactionIdeosTracker.cs" />
     <Compile Include="Ideo\IdeoFoundation_Atheism.cs" />
     <Compile Include="Ideo\IdeoUtility.cs" />
+    <Compile Include="Ideo\Patch_FactionIdeosTracker.cs" />
     <Compile Include="Ideo\Patch_Ideo.cs" />
     <Compile Include="Ideo\Patch_IdeoGenerator.cs" />
+    <Compile Include="Ideo\Patch_IdeoUtility.cs" />
     <Compile Include="Ideo\Patch_MemeDef.cs" />
     <Compile Include="Thoughts\Patch_MemoryThoughtHandler.cs" />
     <Compile Include="Thoughts\Patch_SituationalThoughtHandler.cs" />
@@ -79,6 +89,7 @@
     <Compile Include="UI\Patch_Page_ChooseIdeoPreset.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="AtheismMod.cs" />
+    <Compile Include="UI\Patch_Precept_ThingStyle.cs" />
     <Compile Include="UI\Patch_SocialCardUtility.cs" />
     <Compile Include="UI\UIUtility.cs" />
   </ItemGroup>

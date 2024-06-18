@@ -10,4 +10,13 @@
 	<Atheism_IdeologicalVariationChance>Ideological variation chance in non-player factions: {0_percentage}</Atheism_IdeologicalVariationChance>
 	<Atheism_DeityCountRange>Non-atheist ideology deity count</Atheism_DeityCountRange>
 	<Atheism_DeityCountRangeDesc>The minimum and maximum number of deities non-atheist ideologies can have.</Atheism_DeityCountRangeDesc>
+	<Atheism_IdeoLiberationProgress>Ideological liberation progress</Atheism_IdeoLiberationProgress>
+	<Atheism_IdeoLiberationProgressDesc>A faction is liberated from its ideology when all the ideology's deities are killed, or, if the ideology has no deities, all its relics and altars/ideograms are destroyed.</Atheism_IdeoLiberationProgressDesc>
+	<Atheism_Undiscovered>Undiscovered</Atheism_Undiscovered>
+	<Atheism_Progress>Progress: {0}/3</Atheism_Progress>
+	<Atheism_Discovered>Discovered</Atheism_Discovered>
+	<Atheism_Destroyed>Destroyed</Atheism_Destroyed>
+	<Atheism_DevIncrementDiscoveryProgress>DEV: Increment discovery progress</Atheism_DevIncrementDiscoveryProgress>
+	<Atheism_DevDiscover>DEV: Discover</Atheism_DevDiscover>
+	<Atheism_DevDestroy>DEV: Destroy</Atheism_DevDestroy>
 </LanguageData>

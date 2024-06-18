@@ -14,9 +14,12 @@ namespace Atheism.Dev
         {
             if (Prefs.DevMode && AtheismSettings.AtheismQuickTest)
             {
-                IdeoGenerationParms parms = default(IdeoGenerationParms);
-                parms.forcedMemes = new List<MemeDef>() { DefDatabase<MemeDef>.GetNamed("Structure_Atheist") };
-                Find.GameInitData.playerFaction = FactionGenerator.NewGeneratedFaction(new FactionGeneratorParms(___factionDef, parms, null));
+                IdeoGenerationParms parms = new IdeoGenerationParms(___factionDef)
+                {
+                    fixedIdeo = true,
+                    forcedMemes = new List<MemeDef>() { DefDatabase<MemeDef>.GetNamed("Structure_Atheist") }
+                };
+                Find.GameInitData.playerFaction = FactionGenerator.NewGeneratedFaction(new FactionGeneratorParms(___factionDef, parms));
                 Find.FactionManager.Add(Find.GameInitData.playerFaction);
                 return false;
             }

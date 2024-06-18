@@ -1,4 +1,5 @@
-﻿using RimWorld;
+﻿using Atheism.UI;
+using RimWorld;
 using System.Linq;
 using Verse;
 
@@ -8,7 +9,7 @@ namespace Atheism.Ideo
     {
         public override void DoInfo(ref float curY, float width, IdeoEditMode editMode)
         {
-            
+            UIUtility.DoAtheismInfo(ref curY, width);
         }
 
         public override void GenerateTextSymbols()
@@ -25,7 +26,7 @@ namespace Atheism.Ideo
             GenerateTextSymbols();
             ideo.description = parms.forcedMemes.First().description;
             ideo.SetIcon(DefDatabase<IdeoIconDef>.GetNamed("Atheism"), DefDatabase<ColorDef>.GetNamed("Structure_White"));
-            SetClassicPrecepts();
+            SetPrecepts();
         }
 
         private void SetCulture(IdeoGenerationParms parms)
@@ -44,20 +45,12 @@ namespace Atheism.Ideo
             ideo.memes.AddRange(parms.forcedMemes);
         }
 
-        private void SetClassicPrecepts()
+        private void SetPrecepts()
         {
-            foreach (PreceptDef def in DefDatabase<PreceptDef>.AllDefsListForReading.Where(
-                d => d.classic && 
-                !typeof(Precept_Role).IsAssignableFrom(d.preceptClass) && 
-                d.preceptClass != typeof(Precept_Ritual) && 
-                d.preceptClass != typeof(Precept_Relic) && 
-                d != DefDatabase<PreceptDef>.GetNamed("Nudity_Female_UncoveredGroinOrChestDisapproved") && 
-                d != DefDatabase<PreceptDef>.GetNamed("MarriageName_UsuallyMans")))
+            foreach (PreceptDef def in DefDatabase<PreceptDef>.AllDefsListForReading.Where(d => d.AllowedByAtheism()))
             {
-                ideo.AddPrecept(PreceptMaker.MakePrecept(def), true);
+                ideo.AddPrecept(PreceptMaker.MakePrecept(def), true, null, def.ritualPatternBase);
             }
-            ideo.AddPrecept(PreceptMaker.MakePrecept(DefDatabase<PreceptDef>.GetNamed("Nudity_Female_UncoveredGroinDisapproved")), true);
-            ideo.AddPrecept(PreceptMaker.MakePrecept(DefDatabase<PreceptDef>.GetNamed("MarriageName_Random")), true);
         }
     }
 }

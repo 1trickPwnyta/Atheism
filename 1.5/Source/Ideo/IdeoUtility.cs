@@ -9,7 +9,7 @@ namespace Atheism.Ideo
     {
         public static IdeoFoundationDef GetIdeoFoundationDef(IdeoGenerationParms parms)
         {
-            if (parms.forcedMemes != null && parms.forcedMemes.Any(m => m.IsAtheism()))
+            if (parms.IsAtheism())
             {
                 return DefDatabase<IdeoFoundationDef>.AllDefs.Where(d => d.IsAtheism()).First();
             }
@@ -47,6 +47,45 @@ namespace Atheism.Ideo
         public static bool IsAtheism(this IdeoGenerationParms parms)
         {
             return parms.forcedMemes != null && parms.forcedMemes.Any(m => m.IsAtheism());
+        }
+
+        public static bool IsAltar(this Precept precept)
+        {
+            return precept is Precept_Building && ((Precept_Building)precept).ThingDef.isAltar;
+        }
+
+        public static bool IsRelic(this Precept precept)
+        {
+            return precept is Precept_Relic;
+        }
+
+        public static bool AllowedByAtheism(this PreceptDef d)
+        {
+            return (
+                d.classic &&
+                !typeof(Precept_Role).IsAssignableFrom(d.preceptClass) &&
+                d.preceptClass != typeof(Precept_Relic) &&
+                !new List<string>()
+                {
+                    "Nudity_Female_UncoveredGroinOrChestDisapproved",
+                    "MarriageName_UsuallyMans",
+                    "LeaderSpeech",
+                    "Trial",
+                    "TrialPrisoner",
+                    "TrialMentalState",
+                    "Conversion",
+                    "Execution",
+                    "RoleChange",
+                    "Funeral",
+                    "FuneralNoCorpse",
+                    "Classic_DrumParty",
+                    "Classic_DanceParty"
+                }.Contains(d.defName)) || 
+                new List<string>()
+                {
+                    "Nudity_Female_UncoveredGroinDisapproved",
+                    "MarriageName_Random"
+                }.Contains(d.defName);
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Atheism.Ideo;
+﻿using Atheism.Dev;
+using Atheism.Ideo;
 using HarmonyLib;
 using RimWorld;
 using System;
@@ -7,11 +8,69 @@ using System.Linq;
 using System.Reflection;
 using UnityEngine;
 using Verse;
+using Verse.Sound;
 
 namespace Atheism.UI
 {
     public static class UIUtility
     {
+        public static void DoAtheismInfo(ref float curY, float width)
+        {
+            Widgets.Label(0f, ref curY, width, "Atheism_IdeoLiberationProgress".Translate());
+            Widgets.Label(0f, ref curY, width, "Atheism_IdeoLiberationProgressDesc".Translate());
+            curY += 16f;
+
+            foreach (RimWorld.Ideo ideo in Find.IdeoManager.IdeosInViewOrder.Where(i => !i.IsAtheism()))
+            {
+                Rect iconRect = new Rect(0f, curY, Text.LineHeight, Text.LineHeight);
+                Widgets.DrawHighlightIfMouseover(iconRect);
+                ideo.DrawIcon(iconRect);
+                if (Widgets.ButtonInvisible(iconRect))
+                {
+                    IdeoUIUtility.selected = ideo;
+                    SoundDefOf.DialogBoxAppear.PlayOneShotOnCamera();
+                }
+                Widgets.Label(Text.LineHeight + 8f, ref curY, width - Text.LineHeight - 8f, ideo.name);
+                curY += 8f;
+
+                Precept altarPrecept = ideo.PreceptsListForReading.Where(p => p.IsAltar()).FirstOrDefault();
+                if (altarPrecept != null)
+                {
+                    DoLiberationPrecept(new Rect(0, curY, IdeoUIUtility.PreceptBoxSize.x, IdeoUIUtility.PreceptBoxSize.y), altarPrecept);
+                    curY += IdeoUIUtility.PreceptBoxSize.y;
+                    curY += 8f;
+                }
+
+                List<Precept> relicPrecepts = ideo.PreceptsListForReading.Where(p => p.IsRelic()).ToList();
+                if (relicPrecepts.Any())
+                {
+                    for (int i = 0; i < relicPrecepts.Count; i++)
+                    {
+                        DoLiberationPrecept(new Rect(i * (IdeoUIUtility.PreceptBoxSize.x + 8f), curY, IdeoUIUtility.PreceptBoxSize.x, IdeoUIUtility.PreceptBoxSize.y), relicPrecepts[i]);
+                    }
+                    curY += IdeoUIUtility.PreceptBoxSize.y;
+                    curY += 8;
+                }
+
+                curY += 16f;
+            }
+        }
+
+        private static void DoLiberationPrecept(Rect rect, Precept precept)
+        {
+            precept.DrawPreceptBox(rect, IdeoEditMode.None);
+
+            List<FloatMenuOption> options = new List<FloatMenuOption>();
+            if (Prefs.DevMode)
+            {
+                options.AddRange(DevUtility.GetDiscoveryProgressOptions(precept));
+            }
+            if (options.Any() && Widgets.ButtonInvisible(rect, false))
+            {
+                Find.WindowStack.Add(new FloatMenu(options));
+            }
+        }
+
         public static void DoAtheismIdeoPresetSection(Page_ChooseIdeoPreset page, float x, ref float num)
         {
             IdeoPresetDef atheismDef = DefDatabase<IdeoPresetDef>.GetNamed("Atheism");
