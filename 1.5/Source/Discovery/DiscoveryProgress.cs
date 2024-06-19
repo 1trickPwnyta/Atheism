@@ -1,4 +1,4 @@
-﻿namespace Atheism.Conversion
+﻿namespace Atheism.Discovery
 {
     public enum DiscoveryProgress
     {

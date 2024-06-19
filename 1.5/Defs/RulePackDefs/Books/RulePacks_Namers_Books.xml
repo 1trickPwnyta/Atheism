@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <RulePackDef>
+    <defName>Namer_Scripture</defName>
+    <rulePack>
+      <rulesStrings>
+	  
+        <!-- Roots -->
+        <li>title(has_deity==true)->[deity_name]'s [book] of [nounPluralGood]</li>
+        <li>title->[maybeThe] [ideo_name] [book]</li>
+        <li>title->[book] of [ideo_name]</li>
+        <li>title(has_deity==true)->[deity_name]'s [numberPlural] [adjectiveBad] [nounPluralBad]</li>
+        <li>title(has_deity==true)->[deity_name]'s [numberPlural] [adjectiveGood] [nounPluralGood]</li>
+        <li>title->All About [ideo_name]</li>
+        <li>title->[ideo_name]: the [book]</li>
+
+        <!-- Content -->
+
+		<li>maybeThe-></li>
+        <li>maybeThe->the</li>
+
+        <li>book(p=4)->bible</li>
+        <li>book(p=4)->scripture</li>
+        <li>book->book</li>
+        <li>book->tome</li>
+        <li>book->guide</li>
+        <li>book->pamphlet</li>
+        <li>book->handbook</li>
+        <li>book->manual</li>
+        <li>book->primer</li>
+        <li>book->writ</li>
+
+        <li>nounPluralGood->blessings</li>
+        <li>nounPluralGood->favors</li>
+        <li>nounPluralGood->prayers</li>
+        <li>nounPluralGood->commandments</li>
+        <li>nounPluralGood->miracles</li>
+        <li>nounPluralGood->priests</li>
+        <li>nounPluralGood->revelations</li>
+        <li>nounPluralGood->psalms</li>
+        <li>nounPluralGood->sacrifices</li>
+        <li>nounPluralGood->saints</li>
+        <li>nounPluralGood->apostles</li>
+        <li>nounPluralGood->laws</li>
+        <li>nounPluralGood->martyrs</li>
+
+        <li>nounPluralBad->sins</li>
+        <li>nounPluralBad->curses</li>
+        <li>nounPluralBad->hexes</li>
+        <li>nounPluralBad->plagues</li>
+        <li>nounPluralBad->abominations</li>
+        <li>nounPluralBad->blasphemies</li>
+        <li>nounPluralBad->demons</li>
+        <li>nounPluralBad->infidels</li>
+        <li>nounPluralBad->idols</li>
+
+        <li>adjectiveGood->holy</li>
+        <li>adjectiveGood->pure</li>
+        <li>adjectiveGood->pious</li>
+        <li>adjectiveGood->chosen</li>
+        <li>adjectiveGood->divine</li>
+        <li>adjectiveGood->religious</li>
+        <li>adjectiveGood->sacred</li>
+        <li>adjectiveGood->spiritual</li>
+        <li>adjectiveGood->devout</li>
+        <li>adjectiveGood->reverent</li>
+        <li>adjectiveGood->godly</li>
+        <li>adjectiveGood->dutiful</li>
+        <li>adjectiveGood->faithful</li>
+		
+        <li>adjectiveBad->irreverent</li>
+        <li>adjectiveBad->evil</li>
+        <li>adjectiveBad->sinful</li>
+        <li>adjectiveBad->unholy</li>
+        <li>adjectiveBad->ungodly</li>
+        <li>adjectiveBad->twisted</li>
+        <li>adjectiveBad->adulterous</li>
+        <li>adjectiveBad->unfaithful</li>
+
+        <li>numberPlural->two</li>
+        <li>numberPlural->three</li>
+        <li>numberPlural->four</li>
+        <li>numberPlural->five</li>
+        <li>numberPlural->six</li>
+        <li>numberPlural->seven</li>
+        <li>numberPlural->eight</li>
+        <li>numberPlural->nine</li>
+        <li>numberPlural->ten</li>
+        <li>numberPlural->eleven</li>
+        <li>numberPlural->twelve</li>
+		
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+	
+</Defs>

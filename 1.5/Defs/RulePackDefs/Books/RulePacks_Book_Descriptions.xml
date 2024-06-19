@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <RulePackDef>
+    <defName>Description_Scripture</defName>
+    <rulePack>
+      <rulesStrings>
+	  
+        <!-- Roots -->
+        <li>desc->[inThisBook], [author] [tellsOf] [experiencesWithReligion]. [religiousExperience] [writingQualitySentence]</li>
+
+		<!-- Content -->
+
+        <li>inThisBook->In this [book]</li>
+        <li>inThisBook->Within the pages of this [book]</li>
+		
+		<li>book(p=4)->bible</li>
+        <li>book(p=4)->scripture</li>
+        <li>book->book</li>
+        <li>book->tome</li>
+        <li>book->guide</li>
+        <li>book->pamphlet</li>
+        <li>book->handbook</li>
+        <li>book->manual</li>
+        <li>book->primer</li>
+        <li>book->writ</li>
+
+        <li>author(p=4)->the author</li>
+        <li>author->a saint</li>
+        <li>author->a devout follower</li>
+        <li>author->a prophet</li>
+		
+        <li>tellsOf->tells of</li>
+        <li>tellsOf->describes</li>
+        <li>tellsOf->recounts</li>
+        <li>tellsOf->explains</li>
+
+        <li>experiencesWithReligion->[ANYPAWN_possessive] [experienceWith] [nounPlural]</li>
+		
+		<li>experienceWith->experience with</li>
+		<li>experienceWith->encounter with</li>
+		<li>experienceWith->adventure in</li>
+		<li>experienceWith->personal story of</li>
+		
+		<li>nounPlural->blessings</li>
+        <li>nounPlural->favors</li>
+        <li>nounPlural->prayers</li>
+        <li>nounPlural->commandments</li>
+        <li>nounPlural->miracles</li>
+        <li>nounPlural->priests</li>
+        <li>nounPlural->revelations</li>
+        <li>nounPlural->psalms</li>
+        <li>nounPlural->sacrifices</li>
+        <li>nounPlural->saints</li>
+        <li>nounPlural->apostles</li>
+        <li>nounPlural->laws</li>
+        <li>nounPlural->martyrs</li>
+        <li>nounPlural->sins</li>
+        <li>nounPlural->curses</li>
+        <li>nounPlural->hexes</li>
+        <li>nounPlural->plagues</li>
+        <li>nounPlural->abominations</li>
+        <li>nounPlural->blasphemies</li>
+        <li>nounPlural->demons</li>
+        <li>nounPlural->infidels</li>
+        <li>nounPlural->idols</li>
+        
+        <li>religiousExperience->The author apparently came out of it with a renewed faith.</li>
+        <li>religiousExperience->At one point, the author lost [ANYPAWN_possessive] way and turned to a life of sin.</li>
+        <li>religiousExperience->The author seems thankful for the experience overall.</li>
+        <li>religiousExperience->The author claims to have been put through many trials.</li>
+        <li>religiousExperience->Throughout the story, the author remained faithful and was rewarded.</li>
+        
+        <li>writingQualitySentence(quality[greater_than]4)->The [book] is written exceptionally well.</li>
+        <li>writingQualitySentence(quality[less_than]5,quality[greater_than]1)-></li>
+        <li>writingQualitySentence(quality[less_than]2)->The [book] is written poorly and is hard to understand.</li>
+		
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+	
+</Defs>

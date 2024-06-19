@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="BookBase">
+    <thingClass>Book</thingClass>
+    <defName>Scripture</defName>
+    <label>scripture</label>
+    <description>A holy book that can be studied to learn about a particular ideology.</description>
+    <graphicData>
+      <texPath>Things/Item/Book/Scripture/Scripture</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.8</drawSize>
+    </graphicData>
+    <uiIconPath>Things/Item/Book/Scripture/Scripture</uiIconPath>
+    <statBases>
+      <MarketValue>200</MarketValue>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Book">
+        <nameMaker>Namer_Scripture</nameMaker>
+        <descriptionMaker>Description_Scripture</descriptionMaker>
+        <ageYearsRange>1000~2000</ageYearsRange>
+        <openGraphic>
+          <texPath>Things/Item/Book/Scripture/Scripture_Open</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>0.7</drawSize>
+        </openGraphic>
+        <verticalGraphic>
+          <texPath>Things/Item/Book/Scripture/Scripture_Vertical</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <addTopAltitudeBias>true</addTopAltitudeBias>
+        </verticalGraphic>
+        <doers>
+          <li Class="Atheism.Scripture.BookOutcomeProperties_MakeDiscoveryProgress" />
+          <li Class="Atheism.Scripture.BookOutcomeProperties_CrisisOfBelief" />
+        </doers>
+      </li>
+    </comps>
+  </ThingDef>
+	
+</Defs>

@@ -1,7 +1,9 @@
-﻿using RimWorld;
+﻿using Atheism.Discovery;
+using RimWorld;
 using System.Collections.Generic;
 using System.Linq;
 using Verse;
+using Verse.Grammar;
 
 namespace Atheism.Ideo
 {
@@ -86,6 +88,26 @@ namespace Atheism.Ideo
                     "Nudity_Female_UncoveredGroinDisapproved",
                     "MarriageName_Random"
                 }.Contains(d.defName);
+        }
+
+        public static bool WasEverAtheist(this Pawn pawn)
+        {
+            return pawn.ideo != null && pawn.ideo.PreviousIdeos != null && pawn.ideo.PreviousIdeos.Any(i => i.IsAtheism());
+        }
+
+        public static List<Precept> UndiscoveredPrecepts(this RimWorld.Ideo ideo)
+        {
+            return ideo.PreceptsListForReading.Where(p => (p.IsAltar() || p.IsRelic()) && p.GetDiscoveryProgress() < DiscoveryProgress.Discovered).ToList();
+        }
+
+        public static Faction GetHostFaction(this RimWorld.Ideo ideo)
+        {
+            return Find.FactionManager.AllFactionsListForReading.Where(f => !f.IsPlayer && f.ideos.PrimaryIdeo == ideo).FirstOrDefault();
+        }
+
+        public static List<RimWorld.Ideo> GetAdversarialIdeos()
+        {
+            return Find.IdeoManager.IdeosInViewOrder.Where(i => !i.IsAtheism() && i.GetHostFaction() != null && !i.GetHostFaction().Hidden).ToList();
         }
     }
 }

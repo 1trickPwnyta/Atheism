@@ -64,8 +64,10 @@
     <Compile Include="Atheism.cs" />
     <Compile Include="AtheismRefs.cs" />
     <Compile Include="AtheismSettings.cs" />
+    <Compile Include="Conversion\ConversionDiscoverySource.cs" />
     <Compile Include="Conversion\ConversionUtility.cs" />
-    <Compile Include="Conversion\DiscoveryProgress.cs" />
+    <Compile Include="Discovery\DiscoveryUtility.cs" />
+    <Compile Include="Discovery\DiscoveryProgress.cs" />
     <Compile Include="Conversion\Patch_InteractionWorker_ConvertIdeoAttempt.cs" />
     <Compile Include="Debug.cs" />
     <Compile Include="Deity\Patch_Ideo.cs" />
@@ -73,6 +75,7 @@
     <Compile Include="Deity\Patch_IdeoUtility.cs" />
     <Compile Include="Dev\DevUtility.cs" />
     <Compile Include="Dev\Patch_ScenPart_PlayerFaction.cs" />
+    <Compile Include="Discovery\IDiscoverySource.cs" />
     <Compile Include="IdeologicalVariation\Patch_FactionIdeosTracker.cs" />
     <Compile Include="Ideo\IdeoFoundation_Atheism.cs" />
     <Compile Include="Ideo\IdeoUtility.cs" />
@@ -81,6 +84,15 @@
     <Compile Include="Ideo\Patch_IdeoGenerator.cs" />
     <Compile Include="Ideo\Patch_IdeoUtility.cs" />
     <Compile Include="Ideo\Patch_MemeDef.cs" />
+    <Compile Include="Scripture\BookOutcomeDoerDynamic.cs" />
+    <Compile Include="Scripture\BookOutcomeProperties_CrisisOfBelief.cs" />
+    <Compile Include="Scripture\BookOutcomeProperties_MakeDiscoveryProgress.cs" />
+    <Compile Include="Scripture\Patch_Book.cs" />
+    <Compile Include="Scripture\Patch_IdeoUtility.cs" />
+    <Compile Include="Scripture\ReadingOutcomeDoerCrisisOfBelief.cs" />
+    <Compile Include="Scripture\ReadingOutcomeDoerMakeDiscoveryProgress.cs" />
+    <Compile Include="Scripture\ScriptureDiscoverySource.cs" />
+    <Compile Include="Scripture\ScriptureUtility.cs" />
     <Compile Include="Thoughts\Patch_MemoryThoughtHandler.cs" />
     <Compile Include="Thoughts\Patch_SituationalThoughtHandler.cs" />
     <Compile Include="Thoughts\Patch_ThoughtWorker_Precept_Social.cs" />

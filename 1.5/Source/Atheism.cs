@@ -1,4 +1,4 @@
-﻿using Atheism.Conversion;
+﻿using Atheism.Discovery;
 using Atheism.Ideo;
 using RimWorld;
 using System.Collections.Generic;
@@ -28,6 +28,7 @@ namespace Atheism
         private Dictionary<Precept, DiscoveryProgress> discoveryProgress = new Dictionary<Precept, DiscoveryProgress>();
         private List<Precept> workingPreceptList;
         private List<DiscoveryProgress> workingDiscoveryProgressList;
+        private Dictionary<Pawn, RimWorld.Ideo> lastReadScriptureIdeo = new Dictionary<Pawn, RimWorld.Ideo>();
 
         public Atheism(Game game)
         {
@@ -39,6 +40,7 @@ namespace Atheism
             base.ExposeData();
 
             Scribe_Collections.Look(ref discoveryProgress, "discoveryProgress", LookMode.Reference, LookMode.Value, ref workingPreceptList, ref workingDiscoveryProgressList);
+            Scribe_Collections.Look(ref lastReadScriptureIdeo, "lastReadScriptureIdeo", LookMode.Reference, LookMode.Reference);
         }
 
         public DiscoveryProgress GetDiscoveryProgress(Precept precept)
@@ -50,12 +52,16 @@ namespace Atheism
             return DiscoveryProgress.Undiscovered;
         }
 
-        public void SetDiscoveryProgress(Precept precept, DiscoveryProgress progress)
+        public void SetDiscoveryProgress(Precept precept, DiscoveryProgress progress, IDiscoverySource source = null)
         {
             discoveryProgress[precept] = progress;
+            if (progress > DiscoveryProgress.Undiscovered)
+            {
+                Find.LetterStack.ReceiveLetter(progress.GetLetterLabel(precept), progress.GetLetterText(precept, source), progress.GetLetterDef(), source?.GetLookTargets());
+            }
         }
 
-        public void IncrementDiscoveryProgress(Precept precept)
+        public void IncrementDiscoveryProgress(Precept precept, IDiscoverySource source = null)
         {
             if (!discoveryProgress.ContainsKey(precept))
             {
@@ -63,8 +69,25 @@ namespace Atheism
             }
             if (discoveryProgress[precept] < DiscoveryProgress.Destroyed)
             {
-                discoveryProgress[precept]++;
+                SetDiscoveryProgress(precept, discoveryProgress[precept] + 1, source);
             }
+        }
+
+        public RimWorld.Ideo GetLastReadScriptureIdeo(Pawn pawn)
+        {
+            if (lastReadScriptureIdeo.ContainsKey(pawn))
+            {
+                return lastReadScriptureIdeo[pawn];
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public void SetLastReadScriptureIdeo(Pawn pawn, RimWorld.Ideo ideo)
+        {
+            lastReadScriptureIdeo[pawn] = ideo;
         }
     }
 }

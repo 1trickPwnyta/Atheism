@@ -20,7 +20,7 @@ namespace Atheism.UI
             Widgets.Label(0f, ref curY, width, "Atheism_IdeoLiberationProgressDesc".Translate());
             curY += 16f;
 
-            foreach (RimWorld.Ideo ideo in Find.IdeoManager.IdeosInViewOrder.Where(i => !i.IsAtheism()))
+            foreach (RimWorld.Ideo ideo in Ideo.IdeoUtility.GetAdversarialIdeos())
             {
                 Rect iconRect = new Rect(0f, curY, Text.LineHeight, Text.LineHeight);
                 Widgets.DrawHighlightIfMouseover(iconRect);

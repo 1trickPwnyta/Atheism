@@ -1,4 +1,5 @@
-﻿using Atheism.UI;
+﻿using Atheism.Scripture;
+using Atheism.UI;
 using HarmonyLib;
 using RimWorld;
 using System.Reflection;
@@ -29,5 +30,10 @@ namespace Atheism
         public static readonly MethodInfo m_DefDatabase_IdeoIconDef_get_AllDefs = AccessTools.Method(typeof(DefDatabase<IdeoIconDef>), "get_AllDefs");
         public static readonly MethodInfo m_Find_get_IdeoManager = AccessTools.Method(typeof(Find), "get_IdeoManager");
         public static readonly MethodInfo m_Ideo_get_RitualSeatDef = AccessTools.Method(typeof(RimWorld.Ideo), "get_RitualSeatDef");
+        public static readonly MethodInfo m_Pawn_IdeoTracker_IdeoConversionAttempt = AccessTools.Method(typeof(Pawn_IdeoTracker), nameof(Pawn_IdeoTracker.IdeoConversionAttempt));
+        public static readonly MethodInfo m_IdeoUtility_WasEverAtheist = AccessTools.Method(typeof(Ideo.IdeoUtility), nameof(Ideo.IdeoUtility.WasEverAtheist));
+        public static readonly MethodInfo m_ConversionUtility_TryIncrementDiscoveryProgress = AccessTools.Method(typeof(Conversion.ConversionUtility), nameof(Conversion.ConversionUtility.TryIncrementDiscoveryProgress));
+        public static readonly MethodInfo m_BookOutcomeDoer_OnBookGenerated = AccessTools.Method(typeof(BookOutcomeDoer), nameof(BookOutcomeDoer.OnBookGenerated));
+        public static readonly MethodInfo m_ScriptureUtility_AddTopicDynamicRules = AccessTools.Method(typeof(ScriptureUtility), nameof(ScriptureUtility.AddTopicDynamicRules));
     }
 }
