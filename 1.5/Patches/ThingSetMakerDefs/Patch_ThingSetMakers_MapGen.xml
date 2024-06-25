@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingSetMakerDef[defName="MapGen_AncientComplexRoomLoot_Better"]/root/options/li/thingSetMaker/fixedParams/filter/thingDefs[li="Schematic"]</xpath>
+		<value>
+			<li>Scripture</li>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingSetMakerDef[defName="MapGen_AncientComplex_SecurityCrate"]/root/options/li/thingSetMaker/fixedParams/filter/thingDefs[li="Schematic"]</xpath>
+		<value>
+			<li>Scripture</li>
+		</value>
+	</Operation>
+</Patch>

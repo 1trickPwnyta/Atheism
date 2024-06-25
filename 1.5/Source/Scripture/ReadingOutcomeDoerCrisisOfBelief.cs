@@ -5,7 +5,7 @@ namespace Atheism.Scripture
 {
     public class ReadingOutcomeDoerCrisisOfBelief : BookOutcomeDoer
     {
-        private const float baseCertaintyLossPerHour = 0.03f;
+        private const float baseCertaintyLossPerHour = 0.02f;
         private const float baseCrisisChancePerHour = 0.01f;
 
         private float GetQualityMultiplier()

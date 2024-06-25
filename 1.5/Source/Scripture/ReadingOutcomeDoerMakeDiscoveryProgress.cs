@@ -10,7 +10,7 @@ namespace Atheism.Scripture
 {
     public class ReadingOutcomeDoerMakeDiscoveryProgress : BookOutcomeDoerDynamic
     {
-        private const float baseHoursToRead = 10f;
+        private const float baseHoursToRead = 20f;
 
         private RimWorld.Ideo subject;
         private float readingProgress = 0f;
