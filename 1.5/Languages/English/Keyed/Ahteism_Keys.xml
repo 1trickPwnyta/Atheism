@@ -33,4 +33,5 @@
 	<Atheism_ReadingOutcomeCrisisOfBelief>{PAWN_nameDef} had a crisis of belief while reading {BOOK_labelShort}.</Atheism_ReadingOutcomeCrisisOfBelief>
 	<Atheism_LetterLabelConvertFromScripture>Conversion: {0}</Atheism_LetterLabelConvertFromScripture>
 	<Atheism_LetterConvertFromScripture>{PAWN_nameDef} has been convinced by what {PAWN_pronoun} read in {BOOK_labelShort}. {PAWN_pronoun} now believes in {IDEO_name}.</Atheism_LetterConvertFromScripture>
+	<Atheism_DestroyRelic>Destroy {0} ({1})</Atheism_DestroyRelic>
 </LanguageData>
