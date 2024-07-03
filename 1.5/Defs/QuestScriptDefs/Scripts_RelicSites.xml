@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <QuestScriptDef>
+    <defName>RelicSite</defName>
+    <isRootSpecial>true</isRootSpecial>
+	<defaultChallengeRating>3</defaultChallengeRating>
+    <autoAccept>true</autoAccept>
+    <questNameRules>
+      <rulesStrings>
+        <li>questName->Relic found: [relic_name]</li>
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>questDescription(deitiesCount[greater_than]1)->[relic_name] of [ideo_name] has been located at a remote site controlled by [faction_name]. You can send a caravan there to destroy [relic_name], and by doing so, the deities of [ideo_name] will lose some of their power.</li>
+        <li>questDescription(deitiesCount==1)->[relic_name] of [ideo_name] has been located at a remote site controlled by [faction_name]. You can send a caravan there to destroy [relic_name], and by doing so, the deity [deityLabel] of [ideo_name] will lose some of their power.</li>
+        <li>questDescription(deitiesCount==0)->[relic_name] of [ideo_name] has been located at a remote site controlled by [faction_name]. You can send a caravan there to destroy [relic_name]. Destroy all of [ideo_name]'s relics as well as its altar or ideogram to liberate [faction_name] from its ideology.</li>
+      </rulesStrings>
+    </questDescriptionRules>
+    <root Class="Atheism.QuestGen.QuestNode_Root_RelicSite" />
+  </QuestScriptDef>
+	
+</Defs>

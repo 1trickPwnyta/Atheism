@@ -84,6 +84,10 @@
     <Compile Include="Ideo\Patch_IdeoGenerator.cs" />
     <Compile Include="Ideo\Patch_IdeoUtility.cs" />
     <Compile Include="Ideo\Patch_MemeDef.cs" />
+    <Compile Include="MapGen\GenStep_RelicSite.cs" />
+    <Compile Include="MapGen\SitePartWorker_RelicSite.cs" />
+    <Compile Include="MapGen\SymbolResolver_RelicRoom.cs" />
+    <Compile Include="QuestGen\QuestNode_Root_RelicSite.cs" />
     <Compile Include="Scripture\BookOutcomeDoerDynamic.cs" />
     <Compile Include="Scripture\BookOutcomeProperties_CrisisOfBelief.cs" />
     <Compile Include="Scripture\BookOutcomeProperties_MakeDiscoveryProgress.cs" />

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <SitePartDef ParentName="Outpost">
+    <defName>RelicSite</defName>
+    <label>relic stronghold</label>
+    <description>A remote site that holds a relic, guarded by those who venerate it.</description>
+	<siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+	<expandingIconTexture>World/WorldObjects/Expanding/Sites/AncientRelic</expandingIconTexture>
+    <arrivedLetter>Your goal is to destroy the relic.</arrivedLetter>
+    <approachOrderString>Investigate {0}</approachOrderString>
+    <workerClass>Atheism.MapGen.SitePartWorker_RelicSite</workerClass>
+	<wantsThreatPoints>true</wantsThreatPoints>
+    <tags Inherit="False">
+      <li>RelicSite</li>
+    </tags>
+  </SitePartDef>
+  
+  <GenStepDef>
+    <defName>RelicSite</defName>
+    <linkWithSite>RelicSite</linkWithSite>
+    <order>450</order>
+    <genStep Class="Atheism.MapGen.GenStep_RelicSite" />
+  </GenStepDef>
+  
+  <GenStepDef>
+    <defName>RelicSitePower</defName>
+    <linkWithSite>RelicSite</linkWithSite>
+    <order>451</order>
+    <genStep Class="GenStep_Power"/>
+  </GenStepDef>
+	
+</Defs>

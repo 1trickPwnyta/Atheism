@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	
+  <RuleDef>
+    <defName>RelicRoom</defName>
+    <symbol>relicRoom</symbol>
+    <resolvers>
+      <li Class="Atheism.MapGen.SymbolResolver_RelicRoom" />
+    </resolvers>
+  </RuleDef>
+	
+</Defs>
